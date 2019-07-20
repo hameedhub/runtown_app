@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
+import 'logo.dart';
 
 void main() => runApp(Runtown());
 
@@ -20,40 +22,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Stack(
-            alignment: Alignment.center,
-            children: <Widget>[
-            Container(
-              height: 60.0,
-              width: 60.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50.0),
-                color: Colors.red[400]
-              ),
-              child: Icon(Icons.home, color: Colors.white,),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 90, right: 50),
-              height: 60.0,
-              width: 60.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50.0),
-                color: Colors.green[400]
-              ),
-              child: Icon(Icons.directions_run, color: Colors.white,),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 90, left: 50),
-              height: 60.0,
-              width: 60.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50.0),
-                color: Colors.blue[400]
-              ),
-              child: Icon(Icons.local_car_wash, color: Colors.white,),
-            ),
-          ],
-          ),
+         Logo(),
         Row( 
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -66,12 +35,19 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Padding(padding: const EdgeInsets.only(top:50.0, left: 20.0, bottom: 10.0, right: 20.0),
-              child: Container(
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => Login(),
+                  ));
+                },
+                child: Container(
                 alignment: Alignment.center,
                 height: 50.0,
                 decoration: BoxDecoration(color: Colors.blue[400], borderRadius: BorderRadius.circular(10.0)),
                 child: Text('Sign In', style: TextStyle(fontSize: 15.0, color: Colors.white)),
                 ),
+              )
               ),
             ),  
           ],
