@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'logo.dart';
+import 'register.dart';
 
 void main() => runApp(Runtown());
 
@@ -56,12 +57,19 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Padding(padding: const EdgeInsets.only( left: 20.0, bottom: 10.0, right: 20.0),
-              child: Container(
+              child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> Register(),
+                    ));
+                  },
+                child: Container(
                 alignment: Alignment.center,
                 height: 50.0,
                 decoration: BoxDecoration(color: Colors.green[400], borderRadius: BorderRadius.circular(10.0)),
                 child: Text('Create an Account', style: TextStyle(fontSize: 15.0, color: Colors.white)),
-                ),
+                ),) ,
+               
               ),
             ),  
           ],

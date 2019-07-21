@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:runtown_app/register.dart';
 import 'logo.dart';
 
 class Login extends StatelessWidget{
@@ -63,15 +64,22 @@ class Login extends StatelessWidget{
           ],
         ),
         Expanded(
-          child: Column(
+         child: GestureDetector(
+           onTap: (){
+             Navigator.push(context, MaterialPageRoute(
+               builder: (context)=> Register()
+             ),
+             );
+           },
+           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(bottom: 50.0),
-              child: Text('Create an Account'),
+              child: Text('Create an Account', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red[400]),),
             )
             ],
-          ),
+          ))
         )
         ],),
       ),
